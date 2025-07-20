@@ -102,8 +102,6 @@ export const updateProfile = async (req, res) => {
    }
 };
 
-// hi
-
 //////////////////////////////////////////////////////////////////////////////////
 // import { generateToken } from "../lib/utils.js";
 // import User from "../models/User.js";
