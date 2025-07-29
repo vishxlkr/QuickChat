@@ -20,7 +20,7 @@ const LoginPage = () => {
          return;
       }
 
-      login(currState === "Signup" ? "signup" : "login", {
+      login(currState === "Sign up" ? "signup" : "login", {
          fullName,
          email,
          password,

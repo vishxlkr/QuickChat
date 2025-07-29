@@ -20,8 +20,8 @@ export const AuthProvider = ({ children }) => {
       try {
          const { data } = await axios.get("/api/auth/check");
          if (data.success) {
-            setAuthUser(data.user);
-            connectSocket(data.user);
+            setAuthUser(data.userData);
+            connectSocket(data.userData);
          }
       } catch (error) {
          toast.error(error.message);
@@ -59,8 +59,8 @@ export const AuthProvider = ({ children }) => {
       try {
          const { data } = await axios.post(`/api/auth/${state}`, credentials);
          if (data.success) {
-            setAuthUser(data.user);
-            connectSocket(data.user);
+            setAuthUser(data.userData);
+            connectSocket(data.userData);
             axios.defaults.headers.common["token"] = data.token;
             setToken(data.token);
             localStorage.setItem("token", data.token);
