@@ -12,6 +12,23 @@ import { log } from "console";
 const app = express();
 const server = http.createServer(app);
 
+// 👇 Add the URL of your deployed frontend
+const allowedOrigins = [
+   "https://quick-chat-client-git-main-vishxlkrs-projects.vercel.app",
+];
+app.use(
+   cors({
+      origin: function (origin, callback) {
+         if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+         } else {
+            callback(new Error("Not allowed by CORS"));
+         }
+      },
+      credentials: true,
+   })
+);
+
 // Initialize socket.io server
 export const io = new Server(server, {
    cors: { origin: "*" },
@@ -41,7 +58,6 @@ io.on("connection", (socket) => {
 
 //middleware setup
 app.use(express.json({ limit: "4mb" }));
-app.use(cors());
 
 // Routes setup
 app.use("/api/status", (req, res) => res.send("Server is Live."));
