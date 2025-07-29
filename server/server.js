@@ -18,20 +18,19 @@ const allowedOrigins = [
 ];
 app.use(
    cors({
-      origin: function (origin, callback) {
-         if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-         } else {
-            callback(new Error("Not allowed by CORS"));
-         }
-      },
+      origin: allowedOrigins,
       credentials: true,
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      allowedHeaders: ["Content-Type", "token"],
    })
 );
 
 // Initialize socket.io server
 export const io = new Server(server, {
-   cors: { origin: allowedOrigins[0], credentials: true },
+   cors: {
+      origin: allowedOrigins,
+      credentials: true,
+   },
 });
 
 // store online user
