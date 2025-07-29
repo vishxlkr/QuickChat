@@ -69,6 +69,7 @@ const LoginPage = () => {
                      type="email"
                      placeholder="Email adress"
                      required
+                     autoComplete="username"
                      className="p-2 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   />
                   <input
@@ -76,6 +77,7 @@ const LoginPage = () => {
                      value={password}
                      type="password"
                      placeholder="Password"
+                     autoComplete="current-password"
                      required
                      className="p-2 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   />
