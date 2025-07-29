@@ -9,7 +9,7 @@ const ChatContainer = ({ selectedUser, setSelectedUser }) => {
       if (scrollEnd.current) {
          scrollEnd.current.scrollIntoView({ behavior: "smooth" });
       }
-   }, [selectedUser]);
+   }, []);
 
    return selectedUser ? (
       <div className="h-full overflow-scroll relative backdrop-blur-lg">
@@ -21,7 +21,7 @@ const ChatContainer = ({ selectedUser, setSelectedUser }) => {
                className="w-8 rounded-full"
             />
             <p className="flex-1 text-lg text-white flex items-center gap-2 ">
-               Martin Johnson
+               Vishal Kumar
                <span className="w-2 h--2 rounded-full bg-green-500"></span>
             </p>
 
@@ -118,7 +118,7 @@ const ChatContainer = ({ selectedUser, setSelectedUser }) => {
       <div className="flex flex-col items-center justify-center gap-2 text-gray-500 bg-white/10 max-md:hidden">
          <img src={assets.logo_icon} className="max-w-16" alt="" />
          <p className="text-lg font-medium text-white">
-            Chat anytime , anywher
+            Chat anytime , anywhere
          </p>
       </div>
    );
