@@ -31,7 +31,7 @@ app.use(
 
 // Initialize socket.io server
 export const io = new Server(server, {
-   cors: { origin: "*" },
+   cors: { origin: allowedOrigins[0], credentials: true },
 });
 
 // store online user
