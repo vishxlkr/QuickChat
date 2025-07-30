@@ -8,11 +8,6 @@ import messageRouter from "./routes/messageRoutes.js";
 import { Server } from "socket.io";
 import { log } from "console";
 
-// create expres ap and http server
-const app = express();
-const server = http.createServer(app);
-
-// 👇 Add the URL of your deployed frontend
 const allowedOrigins = [
    "https://quick-chat-client-git-main-vishxlkrs-projects.vercel.app",
 ];
@@ -24,6 +19,12 @@ app.use(
       allowedHeaders: ["Content-Type", "token"],
    })
 );
+
+// create expres ap and http server
+const app = express();
+const server = http.createServer(app);
+
+// 👇 Add the URL of your deployed frontend
 
 // Initialize socket.io server
 export const io = new Server(server, {
