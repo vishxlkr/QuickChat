@@ -13,7 +13,17 @@ const allowedOrigins = [
 ];
 app.use(
    cors({
-      origin: allowedOrigins,
+      origin: function (origin, callback) {
+         const allowedOrigins = [
+            "https://quick-chat-client-git-main-vishxlkrs-projects.vercel.app",
+            "http://localhost:5173", // optional, for local testing
+         ];
+         if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+         } else {
+            callback(new Error("Not allowed by CORS"));
+         }
+      },
       credentials: true,
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
       allowedHeaders: ["Content-Type", "token"],
@@ -29,7 +39,10 @@ const server = http.createServer(app);
 // Initialize socket.io server
 export const io = new Server(server, {
    cors: {
-      origin: allowedOrigins,
+      origin: [
+         "https://quick-chat-client-git-main-vishxlkrs-projects.vercel.app",
+         "http://localhost:5173",
+      ],
       credentials: true,
    },
 });
