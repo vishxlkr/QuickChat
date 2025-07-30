@@ -4,5 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+   plugins: [react(), tailwindcss()],
+   preview: {
+      port: 4173, // or any you prefer
+      host: true,
+      allowedHosts: ["quickchat-1-dr5u.onrender.com"],
+   },
 });
