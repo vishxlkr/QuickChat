@@ -8,56 +8,13 @@ import messageRouter from "./routes/messageRoutes.js";
 import { Server } from "socket.io";
 import { log } from "console";
 
-const allowedOrigins = [
-   "https://quick-chat-client-git-main-vishxlkrs-projects.vercel.app",
-];
-app.use(
-   cors({
-      origin: function (origin, callback) {
-         const allowedOrigins = [
-            "https://quick-chat-client-git-main-vishxlkrs-projects.vercel.app",
-            "http://localhost:5173", // optional, for local testing
-         ];
-         if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-         } else {
-            callback(new Error("Not allowed by CORS"));
-         }
-      },
-      credentials: true,
-      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-      allowedHeaders: ["Content-Type", "token"],
-   })
-);
-
-app.use((req, res, next) => {
-   res.header(
-      "Access-Control-Allow-Origin",
-      "https://quick-chat-client-git-main-vishxlkrs-projects.vercel.app"
-   );
-   res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept, token"
-   );
-   res.header("Access-Control-Allow-Credentials", "true");
-   next();
-});
-
 // create expres ap and http server
 const app = express();
 const server = http.createServer(app);
 
-// 👇 Add the URL of your deployed frontend
-
 // Initialize socket.io server
 export const io = new Server(server, {
-   cors: {
-      origin: [
-         "https://quick-chat-client-git-main-vishxlkrs-projects.vercel.app",
-         "http://localhost:5173",
-      ],
-      credentials: true,
-   },
+   cors: { origin: "*" },
 });
 
 // store online user
@@ -84,6 +41,7 @@ io.on("connection", (socket) => {
 
 //middleware setup
 app.use(express.json({ limit: "4mb" }));
+app.use(cors());
 
 // Routes setup
 app.use("/api/status", (req, res) => res.send("Server is Live."));
