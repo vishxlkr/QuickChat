@@ -6,23 +6,23 @@ QuickChat is a modern full-stack chat app built using the MERN stack and Socket.
 
 ## 🧰 Tech Stack
 
-* **Frontend**: React 18+, Vite, Tailwind CSS
-* **Backend**: Node.js, Express.js, MongoDB (Mongoose)
-* **Real-time**: Socket.IO
-* **Authentication**: JSON Web Tokens (JWT), Protected Routes
-* **Image Upload (optional)**: Multer + ImageKit
+-  **Frontend**: React 18+, Vite, Tailwind CSS
+-  **Backend**: Node.js, Express.js, MongoDB (Mongoose)
+-  **Real-time**: Socket.IO
+-  **Authentication**: JSON Web Tokens (JWT), Protected Routes
+-  **Image Upload (optional)**: Multer + ImageKit
 
 ---
 
 ## 📦 Features
 
-* ✅ User Registration & Login
-* ✅ JWT-based authentication
-* ✅ Real-time 1:1 messaging with Socket.IO
-* ✅ Online user tracking
-* ✅ Profile update support
-* ✅ Responsive UI built with Tailwind CSS
-* ✅ Local development-friendly environment setup
+-  ✅ User Registration & Login
+-  ✅ JWT-based authentication
+-  ✅ Real-time 1:1 messaging with Socket.IO
+-  ✅ Online user tracking
+-  ✅ Profile update support
+-  ✅ Responsive UI built with Tailwind CSS
+-  ✅ Local development-friendly environment setup
 
 ---
 
@@ -126,11 +126,7 @@ Then open `http://localhost:5173` in your browser.
 
 ## 👨‍💻 Author
 
-**Vishal Kumar**
+**Vishal Kumar **
 [GitHub](https://github.com/vishxlkr)
 
 ---
-
-## 🪪 License
-
-This project is licensed under the MIT License.
