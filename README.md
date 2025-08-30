@@ -135,7 +135,7 @@ Then open `http://localhost:5173` in your browser.
 
 ## 👨‍💻 Author
 
-**Vishal **
+**Vishal Kumar **
 [GitHub](https://github.com/vishxlkr)
 
 ---
