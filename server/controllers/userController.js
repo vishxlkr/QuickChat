@@ -101,7 +101,7 @@ export const updateProfile = async (req, res) => {
                bio,
                fullName,
             },
-            { new: true }
+            { new: true } // return the updated user
          );
       }
 

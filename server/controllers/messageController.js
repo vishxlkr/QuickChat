@@ -31,7 +31,7 @@ export const getUserForSidebar = async (req, res) => {
    }
 };
 
-//get al messages for selected user
+//get all messages for selected user
 
 export const getMessages = async (req, res) => {
    try {
