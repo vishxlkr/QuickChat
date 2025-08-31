@@ -56,7 +56,7 @@ export const getMessages = async (req, res) => {
 };
 
 // api to mark message as seen using messsage id for individual id
-// this
+// this will mark message if seen while chatting
 export const markMessageAsSeen = async (req, res) => {
    try {
       const { id } = req.params;

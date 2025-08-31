@@ -9,9 +9,12 @@ import {
 
 const messageRouter = express.Router();
 
-messageRouter.get("/users", protectRoute, getUserForSidebar);
-messageRouter.get("/:id", protectRoute, getMessages);
-messageRouter.put("/mark/:id", protectRoute, markMessageAsSeen);
-messageRouter.post("/send/:id", protectRoute, sendMessage);
+messageRouter.get("/users", protectRoute, getUserForSidebar); // get all the messages for the left side bar
+
+messageRouter.get("/:id", protectRoute, getMessages); // get all messages for the a particular person chat
+
+messageRouter.put("/mark/:id", protectRoute, markMessageAsSeen); // maark the message seen for the particular message while chatting
+
+messageRouter.post("/send/:id", protectRoute, sendMessage); // to send message
 
 export default messageRouter;
