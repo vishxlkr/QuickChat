@@ -35,8 +35,8 @@ export const getUserForSidebar = async (req, res) => {
 
 export const getMessages = async (req, res) => {
    try {
-      const { id: selectedUserId } = req.params;
-      const myId = req.user._id;
+      const { id: selectedUserId } = req.params; // the person I'm chatting with
+      const myId = req.user._id; // my own ID (from protectRoute middleware)
       const messages = await Message.find({
          $or: [
             { senderId: myId, receiverId: selectedUserId },
