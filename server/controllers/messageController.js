@@ -31,7 +31,7 @@ export const getUserForSidebar = async (req, res) => {
    }
 };
 
-//get all messages for selected user
+//get all messages for selected user when we open the chat
 
 export const getMessages = async (req, res) => {
    try {
@@ -56,7 +56,7 @@ export const getMessages = async (req, res) => {
 };
 
 // api to mark message as seen using messsage id for individual id
-
+// this
 export const markMessageAsSeen = async (req, res) => {
    try {
       const { id } = req.params;
